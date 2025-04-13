@@ -88,6 +88,7 @@ void Privacy::onPrivacyNodesChanged() {
   nodes_screenshare.clear();
 
   for (auto& node : backend->privacy_nodes) {
+    if (node.second->node_name == "cava") continue;
     switch (node.second->state) {
       case PW_NODE_STATE_RUNNING:
         switch (node.second->type) {
